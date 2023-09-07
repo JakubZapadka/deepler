@@ -1,0 +1,16 @@
+{
+    "name": "deepler",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "watch": "sass --watch css/input.scss css/output.css"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "sass": "^1.58.1",
+        "@prettier/plugin-php": "0.14.3",
+        "prettier": "2.0.5"
+    }
+}

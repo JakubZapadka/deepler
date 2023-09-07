@@ -1,0 +1,25 @@
+LOGS FILE
+
+--------------------------------------------------------
+2023-09-07 12:46:50pm
+--------------------------------------------------------
+Wrong password
+--------------------------------------------------------
+2023-09-07 12:47:33pm
+--------------------------------------------------------
+message length: 26679
+
+id=chatcmpl-7w6pwZ8sPUgqeV4wLvTLhXfFJSlfY 
+content=W polityce ostatniego dnia wydarzyło się kilka istotnych rzeczy. Poniżej znajduje się krótki opis tych tematów:
+
+- Polityk Konfederacji pozwał posłankę Lewicy w trybie wyborczym, jednak sąd oddalił pozw. Magdalena Biejat oskarżyła Konfederację o antysemityzm, homofobię i przemoc wobec dzieci.
+- Najnowszy sondaż Kantar dla "Faktów" TVN i TVN24 pokazuje, że PiS ma przewagę nad KO, a Konfederacja zajmuje trzecie miejsce.
+- Senacka komisja przyjęła końcowy raport ws. Pegasusa, uznając zakup tego systemu za nielegalny. Komisja rekomenduje również wprowadzenie kontroli Rzecznika Praw Obywatelskich i sądów w sprawach ochrony praw i wolności służb policyjnych.
+- Donald Tusk wzywa Jarosława Kaczyńskiego do debaty, pytając, czy kompletnie stracił kontrolę.
+- Prokuratura chce uchylenia immunitetu senatora Krzysztofa Brejzy w związku z podejrzeniami o przekroczenie uprawnień służbowych. Senator skomentował to, mówiąc o upolitycznionej prokuraturze.
+- Polskie media informują również o nowej wyborczej obietnicy PiS, dotyczącej wprowadzenia "Lokalnej półki" w sklepach, której celem jest promowanie lokalnej produkcji żywności.
+- "Fakt" donosi o dziwnych rozbieżnościach w oświadczeniu majątkowym minister zdrowia Katarzyny Sójki oraz jej wyjaśnieniach, że oszczędności wynikają z niewydatkowanego kredytu.
+- Donald Tusk skomentował także doniesienia o wielkiej aferze korupcyjnej dotyczącej wydawania wiz dla migrantów, mówiąc, że rząd PiS to amator w porównaniu z Łukaszenką.
+
+To najważniejsze tematy polityczne ostatniego dnia. 
+used_tokens=9975

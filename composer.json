@@ -1,0 +1,6 @@
+{
+    "require": {
+        "orhanerday/open-ai": "^4.8",
+        "kint-php/kint": "^5.0"
+    }
+}
