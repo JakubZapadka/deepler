@@ -1,6 +1,8 @@
 # Deepler - Automatic Politics Article Generator
 
-Deepler is a web application that automatically generates coherent and unbiased articles about politics using the OpenAI GPT-3 API. It aims to provide a summary of recent political events without unnecessary exaggeration or speculation. Users can also manage articles, view logs, and access an admin panel for testing purposes.
+Deepler is a web application that automatically generates coherent and unbiased articles about politics using the OpenAI GPT-3 API. It aims to provide a summary of recent political events without unnecessary exaggeration or speculation. admin users can also manage articles, view logs, and access an admin panel for testing purposes.
+
+![image](https://github.com/JakubZapadka/deepler/assets/102255945/2606ade7-e3f6-49d7-83eb-70f4c112fac4)
 
 You can see the project in action at [Deepler Website](https://deepler.pl). To access the admin panel for testing, use the following credentials:
 - **Username**: test
