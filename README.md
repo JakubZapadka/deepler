@@ -15,6 +15,7 @@ Before running the project, ensure you have the following dependencies installed
 - Composer
 - Node.js
 - A local server (e.g., XAMPP) if you want to run it locally
+- Database system(included in XAMPP)
 
 ## Getting Started
 
@@ -44,37 +45,26 @@ To get Deepler up and running on your local machine, follow these steps:
    npm install
    ```
 
-5. Configure your environment by copying the `.env.example` file to `.env`:
+5. Export database file(db.sql) to your database
+
+6. Configure your environment by copying the `.env.example` file to `.env`:
 
    ```shell
    cp .env.example .env
    ```
 
-6. Set your OpenAI API key in the `.env` file:
+7. Set your env keys in the `.env` file:
 
    ```shell
-   OPENAI_API_KEY=your_api_key_here
+   DB_HOST=YOUR_DB_HOST
+   DB_USER=YOUR_DB_USER
+   DB_PASS=YOUR_DB_PASS
+   DB_NAME=YOUR_DB_NAME
+   CHATGPT_API_KEY=YOUR_CHATGPT_API_KEY
+   DAILY_PASS=YOUR_PASSWORD_TO_FILE_DAILY-ARTICLE.PHP
    ```
-
-7. Generate application key:
-
-   ```shell
-   php artisan key:generate
-   ```
-
-8. Migrate the database and seed it with sample data:
-
-   ```shell
-   php artisan migrate --seed
-   ```
-
+   
 9. Start the development server:
-
-   ```shell
-   php artisan serve
-   ```
-
-10. Visit `http://localhost:8000` in your browser to access Deepler locally.
 
 ## Features
 
