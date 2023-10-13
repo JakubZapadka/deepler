@@ -1,6 +1,40 @@
 <?php
 session_start();
 
+function resizeImg($img, $directory, $name){
+    // Load the source image (replace 'source.jpg' with your image filename)
+    $sourceImage = imagecreatefromstring(file_get_contents($img));
+
+    if ($sourceImage !== false) {
+        // Get the dimensions of the source image
+        $sourceWidth = imagesx($sourceImage);
+        $sourceHeight = imagesy($sourceImage);
+
+        // Set the new width and height for the resized image
+        $newWidth = 24; // Replace with your desired width
+        $newHeight = 16; // Replace with your desired height
+
+        // Create a new image with the desired dimensions
+        $resizedImage = imagecreatetruecolor($newWidth, $newHeight);
+
+        // Resize the source image to the new dimensions
+        imagecopyresized($resizedImage, $sourceImage, 0, 0, 0, 0, $newWidth, $newHeight, $sourceWidth, $sourceHeight);
+
+        // Save or output the resized image
+        header('Content-Type: image/jpeg'); // Set the content type to JPEG
+        // imagejpeg($resizedImage, null, 100); // Output the resized image as JPEG
+
+        // Optionally, save the resized image to a file
+        imagejpeg($resizedImage, $directory.$name.'-small'.'.png', 100); // Save the resized image as 'resized.jpg'
+
+        // Clean up memory
+        imagedestroy($sourceImage);
+        imagedestroy($resizedImage);
+        return True;
+    }
+    return False;
+}
+
 if (!isset($_SESSION["login"]["status"]) || $_SESSION["login"]["status"] !== "admin") {
     header("location: login.php");
     exit();
@@ -34,6 +68,34 @@ if (isset($_POST['submit'])) {
                     $target_file = $target_directory . $title_url . ".png";
                     $target_file_to_db = "./media/img/" . $title_url . ".png";
 
+                    /* RESIZE IMG AND SAVE */
+                    $sourceImage = imagecreatefromstring(file_get_contents($_FILES['thumbnail']['tmp_name']));
+
+                    $sourceWidth = imagesx($sourceImage);
+                    $sourceHeight = imagesy($sourceImage);
+            
+                    // Set the new width and height for the resized image
+                    $newWidth = 24; // Replace with your desired width
+                    $newHeight = 16; // Replace with your desired height
+            
+                    // Create a new image with the desired dimensions
+                    $resizedImage = imagecreatetruecolor($newWidth, $newHeight);
+            
+                    // Resize the source image to the new dimensions
+                    imagecopyresized($resizedImage, $sourceImage, 0, 0, 0, 0, $newWidth, $newHeight, $sourceWidth, $sourceHeight);
+            
+                    // Save or output the resized image
+                    header('Content-Type: image/jpeg'); // Set the content type to JPEG
+                    // imagejpeg($resizedImage, null, 100); // Output the resized image as JPEG
+            
+                    // Optionally, save the resized image to a file
+                    imagejpeg($resizedImage, $target_directory.$title_url.'-small'.'.png', 100); // Save the resized image as 'resized.jpg'
+            
+                    // Clean up memory
+                    imagedestroy($sourceImage);
+                    imagedestroy($resizedImage);
+
+                    /* /RESIZE IMG AND SAVE */
                     if (move_uploaded_file($thumbnail['tmp_name'], $target_file)) {
                         // Wstaw nowy artykuł do bazy danych
                         $insert = "INSERT INTO `articles`(`public`, `title`, `title_url`, `thumbnail`, `content`, `author`, `release_date`) VALUES (1,'{$title}','{$title_url}','{$target_file_to_db}','{$content}','{$author}',NOW())";
@@ -79,7 +141,7 @@ if (isset($_POST['submit'])) {
         <section class="upload">
             <div class="container">
                 <form
-                action="php/write-article.php"
+                action="<?php echo $_SERVER['PHP_SELF']; ?>"
                 method="POST"
                 enctype="multipart/form-data"
             >

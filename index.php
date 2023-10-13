@@ -54,7 +54,11 @@ function latest_articles($rows_per_page){
 
             echo "
             <article class='latest_articles'>
-                <a href='article.php?t={$row["title_url"]}'><img src='{$row["thumbnail"]}' alt=''></a>
+                <a href='article.php?t={$row["title_url"]}'>
+                    <div class='blur_load' style='background-image: url(".substr($row["thumbnail"], 0, -4)."-small.png')'>
+                        <img src='{$row["thumbnail"]}' alt='' loading='lazy'>
+                    </div>
+                </a>
                 <a href='article.php?t={$row["title_url"]}'><h3>{$row['title']}</h3></a>
                 <span class='realease_date'>{$time}</span>
             </article>";
