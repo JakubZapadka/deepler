@@ -26,7 +26,7 @@ To get Deepler up and running on your local machine, follow these steps:
 1. Clone the repository:
 
    ```shell
-   git clone https://github.com/your-username/deepler.git
+   git clone https://github.com/JakubZapadka/deepler
    ```
 
 2. Change to the project directory:
